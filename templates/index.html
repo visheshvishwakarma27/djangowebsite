@@ -9,7 +9,7 @@
   <script language="JavaScript">
     function showInput() {
         document.getElementById('display').innerHTML = 
-                    document.getElementById("user_input").value;
+                                                        document.getElementById("user_input").value;
     }
   </script>
 
@@ -17,12 +17,12 @@
 <body>
 
   <form>
-    <label><b>Enter a Message</b></label>
+    <label><b>Type here</b></label>
     <input type="text" name="message" id="user_input">
   </form>
 
   <input type="submit" onclick="showInput();"><br/>
-  <label>Your input: </label>
+  <label>your value: </label>
   <p>Hi my name is <span id='display'></span></p>
 </body>
 </html>
