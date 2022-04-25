@@ -33,13 +33,16 @@ def about(request):
 def news(request):
     return render(request,'news.html')
 
-def contact(request):
+def register(request):
+    return render(request,'register.html')
+
+def Contact(request):
     
     if request.method=="POST":
         firstname=request.POST.get('firstname')
         lastname=request.POST.get('lastname')
         subject=request.POST.get('subject')
-        contact=contact(firstname=firstname,lastname=lastname,subject=subject,date=datetime.today())
+        contact=Contact(firstname=firstname,lastname=lastname,Subject=subject,Date=datetime.today())
         contact.save()
     return render(request,'contact.html')
 

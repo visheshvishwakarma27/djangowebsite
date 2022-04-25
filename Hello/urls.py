@@ -24,6 +24,7 @@ admin.site.index_title = "Welcome to vishesh Researcher lab"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls'))
+    path('', include('home.urls')),
+    path('accounts/',include('accounts.urls'))
     
 ]
