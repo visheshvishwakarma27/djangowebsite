@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block body %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +7,31 @@
 
 
 </head>
+<style>
+  Body {  
+    font-family: Calibri, Helvetica, sans-serif;  
+    background-color: pink;  
+  }  
+
+  form {   
+    border: 3px solid #f1f1f1;   
+} 
+input[type=text], input[type=password],input[type=email] {   
+  width: 40%;   
+  margin: 8px 0;  
+  padding: 12px 20px;   
+  display: inline-block;   
+  border: 2px solid green;   
+  box-sizing: border-box;   
+}  
+
+</style>
 <body>
+<center>
+<h3>Signup Page</h3></center>
 
-<h3>Registration form</h3>
 
-
+<center>
   <form method="post" action="/register">
     {% csrf_token %}
     
@@ -26,17 +48,22 @@
     <input type="email" id="email" name="email" placeholder="email"><br>
 
     <label for="password1">Password</label>
-    <input type="text" id="password" name="password1" placeholder="password"><br>
+    <input type="password" id="password" name="password1" placeholder="password"><br>
 
     <label for="password2">Password</label>
     <input type="text" id="password2" name="password2" placeholder="re enter password">
 
 
-
-
+   
     <input type="submit" value="Submit">
   </form>
+ 
+  <button 
+    onclick="window.location.href = '/login';">
+        Login from here aslo
+    </button>
 
-
+</center>
 </body>
 </html>
+{% endblock body %}

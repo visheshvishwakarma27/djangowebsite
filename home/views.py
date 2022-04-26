@@ -35,15 +35,18 @@ def news(request):
 
 def register(request):
     return render(request,'register.html')
+def login(request):
+    return render(request,'login.html')
 
 def Contact(request):
     
-    if request.method=="POST":
-        firstname=request.POST.get('firstname')
-        lastname=request.POST.get('lastname')
-        subject=request.POST.get('subject')
-        contact=Contact(firstname=firstname,lastname=lastname,Subject=subject,Date=datetime.today())
-        contact.save()
+    if request.method=="post":
+        firstname=request.POST.get['firstname']
+        lastname=request.POST.get['lastname']
+        subject=request.POST.get['subject']
+        contacts=Contact(firstname=firstname,lastname=lastname,Subject=subject,Date=datetime.today())
+        contact.save();
+        print(contact)
     return render(request,'contact.html')
 
 
@@ -51,3 +54,7 @@ def services(request):
     return render(request,'services.html')
 
 
+
+
+def forget(request):
+    return render(request,'forget.html')

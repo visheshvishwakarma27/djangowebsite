@@ -49,6 +49,12 @@ input[type=submit]:hover {
 
 <div class="container">
   <form method="post" action="/contact">
+    {% if messages %}
+            {% for msg in messages %}
+            <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+
     {% csrf_token %}
     
     <label for="firstname">First Name</label>
