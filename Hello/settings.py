@@ -136,3 +136,4 @@ STATICFILES_DIRS = [
 
 
 # Activate Django-Heroku.
+
