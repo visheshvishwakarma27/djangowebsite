@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django
+import django_heroku
 
 
 
@@ -28,7 +30,7 @@ SECRET_KEY = 'django-insecure-j3&_#*vvhvqjh=-19p(#hvf-g8j^9toy7lw^cy@d7*&n9lbl7@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["git.heroku.com/wesbitedjango.git"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -136,4 +138,4 @@ STATICFILES_DIRS = [
 
 
 # Activate Django-Heroku.
-
+django_heroku.settings(locals())
