@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+ This is body block
+ <!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    function showInput() {
+        document.getElementById('display').innerHTML = 
+                                                        document.getElementById("user_input").value;
+    }
+  </script>
+
+  </head>
+<body>
+
+  <form>
+    <label><b>Type here</b></label>
+    <input type="text" name="message" id="user_input">
+  </form>
+
+  <input type="submit" onclick="showInput();"><br/>
+  <label>your value: </label>
+  <p>Hi my name is <span id='display'></span></p>
+</body>
+</html>
+
+{% endblock body %}
