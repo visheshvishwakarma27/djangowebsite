@@ -1,1 +1,1 @@
-web: gunicorn djangowebsite.wsgi
+web: gunicorn home.wsgi
