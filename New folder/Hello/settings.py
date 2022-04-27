@@ -143,4 +143,3 @@ STATICFILES_DIRS = [
 django_heroku.settings(locals())
 
 
-STATIC_ROOT= BASE_DIR / 'static'
