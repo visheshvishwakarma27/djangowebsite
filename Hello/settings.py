@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-j3&_#*vvhvqjh=-19p(#hvf-g8j^9toy7lw^cy@d7*&n9lbl7@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['wesbitedjango.herokuapp.com','localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
