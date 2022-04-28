@@ -1,31 +1,20 @@
-from distutils.command.build_scripts import first_line_re
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User , auth 
+from django.shortcuts import render
+
 # Create your views here.
+from rest_framework import generics, permissions
+from rest_framework.response import Response
+from knox.models import AuthToken
+from .serializers import UserSerializer, RegisterSerializer
 
-def register(request):
+# Register API
+class RegisterAPI(generics.GenericAPIView):
+    serializer_class = RegisterSerializer
 
-    if request.method == "POST":
-        firstname=request.POST["firstname"]
-        lastname=request.POST["lastname"]
-        username=request.POST["username"]
-        email=request.POST["email"]
-        password=request.POST["password1"]
-        password=request.POST["password2"]
-
-
-        if password1==password2:
-            user=User.objects.create_user(username=username,password=password,email=email,firstname=firstname,lastname=lastname)
-
-        user.save();
-        print("user created")
-        return redirect("/")
-
-
-
-
-
-
-
-    return render(request,'register.html')
-    
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        return Response({
+        "user": UserSerializer(user, context=self.get_serializer_context()).data,
+        "token": AuthToken.objects.create(user)[1]
+        })
