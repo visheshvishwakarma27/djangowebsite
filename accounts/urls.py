@@ -29,9 +29,10 @@ urlpatterns = [
     path('api/logout/',knox_views.LogoutView.as_view(), name='logout'),
     path('api/logoutall/',knox_views.LogoutAllView.as_view(), name='logoutall'),
     path('api/change-password/', ChangePasswordView.as_view(), name='change-password'),
-    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),    
+    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')), 
     path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),   
+    
 ]
 
